@@ -1,6 +1,8 @@
 package dio.web.api.model;
 
 
+import dio.web.api.handler.BusinessException;
+
 public class Usuario {
     private Integer id;
     private String login;
@@ -11,6 +13,14 @@ public class Usuario {
     public Usuario(String login, String password){
         this.login = login;
         this.password = password;
+    }
+
+    public void Validate() {
+        if (this.login.isBlank())
+            throw new BusinessException("login é obrigatório!");
+
+        if (this.password.isBlank())
+            throw new BusinessException("password é obrigatório!");
     }
 
     @Override

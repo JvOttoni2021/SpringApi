@@ -31,6 +31,7 @@ public class UserController {
 
     @PostMapping
     public void postUser(@RequestBody Usuario usuario) {
+        usuario.Validate();
         _repository.save(usuario);
     }
 }

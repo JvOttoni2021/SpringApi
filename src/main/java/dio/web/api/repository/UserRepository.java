@@ -1,5 +1,6 @@
 package dio.web.api.repository;
 
+import dio.web.api.handler.BusinessException;
 import dio.web.api.model.Usuario;
 import org.springframework.stereotype.Repository;
 
