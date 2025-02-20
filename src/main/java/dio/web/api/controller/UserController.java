@@ -23,15 +23,4 @@ public class UserController {
     public Optional<Usuario> getByName(@PathVariable("username") String username) {
         return _repository.findByName(username);
     }
-
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id") Integer id) {
-        _repository.deleteById(id);
-    }
-
-    @PostMapping
-    public void postUser(@RequestBody Usuario usuario) {
-        usuario.Validate();
-        _repository.save(usuario);
-    }
 }
